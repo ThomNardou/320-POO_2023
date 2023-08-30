@@ -15,12 +15,11 @@ namespace ConsoleApp1
             // Déclaration variable
             string escargot = "_@_ö";
             int speed = 200;
+            int Life = 50;
+            int i = 0;
 
             // Declaration contante
             const int POSy = 10;
-
-            // Taille de l'écran
-            int ScreenWidth = Console.WindowWidth;
 
             // enleve le curseur
             Console.CursorVisible = false;
@@ -28,22 +27,31 @@ namespace ConsoleApp1
             //change couleur
             Console.ForegroundColor = ConsoleColor.Red;
 
+            Console.SetCursorPosition(i, POSy);
             Console.Write(escargot);
 
-            for (int i = 0; i <= ScreenWidth / 2; i++)
+            while (i <= Life)
+            {
+                Console.MoveBufferArea(i, POSy, 4, 1, i+1, POSy);
+                Thread.Sleep(speed);
+                i++;
+            }
+
+            /*while (i <= Life)
             {
                 Console.Clear();
                 Console.SetCursorPosition(i, POSy);
                 Console.Write(escargot);
 
-                if (i >= ScreenWidth / 4)
+                if (i >= Life / 2)
                     speed = 300;
 
                 Thread.Sleep(speed);
-            }
+                i++;
+            }*/
 
             Console.Clear();
-            Console.SetCursorPosition(ScreenWidth / 2, POSy);
+            Console.SetCursorPosition(i, POSy);
             Console.Write("____");
 
             Console.ReadKey();
