@@ -37,24 +37,9 @@ namespace Parachute
             paraList.Add(Bob);
         }
 
-        public void drawPassenger()
+        public void removePassenger()
         {
-            Console.SetCursorPosition(_x, _y + 7);
-            for (int i = 0; i < paraList[0].withoutParachute.Length; i++)
-            {
-                Console.SetCursorPosition(_x, _y + i + 7);
-                Console.WriteLine(paraList[0].withoutParachute[i]);
-            }
-        }
-
-        public void downPassenger()
-        {
-            Console.SetCursorPosition(_x, _y);
-        }
-
-        public void updatePassenger()
-        {
-            _y++;
+            paraList.Remove(Bob);
         }
 
         public void Draw()
@@ -64,11 +49,6 @@ namespace Parachute
                 Console.SetCursorPosition(_x, _y + i);
                 Console.WriteLine(view[i]);
             }
-        }
-
-        public void MovePlaneLeft()
-        {
-            Console.SetCursorPosition(_x, _y);
         }
 
         public void update()

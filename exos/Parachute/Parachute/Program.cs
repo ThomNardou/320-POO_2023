@@ -14,7 +14,9 @@ namespace Parachute
             Console.SetWindowSize(Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT);
             ConsoleKeyInfo keyPressed;
 
-            int intTemp = 0;
+            bool isJumping = false;
+
+            List<Para> paraListJumping = new List<Para>();
 
             Plane plane = new Plane();
 
@@ -23,9 +25,13 @@ namespace Parachute
 
             do
             {
+                if (isJumping)
+                {
+                    paraListJumping[0].drawPassenger();
+                    paraListJumping[0].updatePassenger();
+                }
 
                 plane.Draw();
-                plane.MovePlaneLeft();
                 Thread.Sleep(200);
                 plane.update();
                 Console.Clear();
@@ -36,7 +42,9 @@ namespace Parachute
                     switch(keyPressed.Key)
                     {
                         case ConsoleKey.Spacebar:
-                            plane.drawPassenger();
+                            paraListJumping.Add(plane.paraList[0]);
+                            paraListJumping[0].drawPassenger();
+                            isJumping = true;
                             break;
                     }
                 }

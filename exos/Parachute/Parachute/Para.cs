@@ -31,6 +31,20 @@ namespace Parachute
          @" / \ ",
         };
 
+        public void drawPassenger()
+        {
+            Console.SetCursorPosition(_x, _y + 7);
+            for (int i = 0; i < withoutParachute.Length; i++)
+            {
+                Console.SetCursorPosition(_x, _y + i + 7);
+                Console.WriteLine(withoutParachute[i]);
+            }
+        }
+
+        public void updatePassenger()
+        {
+            _y++;
+        }
 
     }
 }
