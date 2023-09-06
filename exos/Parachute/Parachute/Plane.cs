@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Parachute
@@ -35,9 +36,14 @@ namespace Parachute
             }
         }
 
-        public void MovePlane()
+        public void MovePlaneLeft()
         {
+            Console.MoveBufferArea(_x, _y, Width, height, _x + 1, _y);
+        }
 
+        public void update()
+        {
+            _x++;
         }
     }
 }

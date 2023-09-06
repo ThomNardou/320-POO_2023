@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Parachute
@@ -13,7 +14,15 @@ namespace Parachute
             Console.SetWindowSize(Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT);
             Plane plane = new Plane();
             plane.Draw();
-            Console.ReadLine();
+
+            do
+            {
+
+                plane.MovePlaneLeft();
+                Thread.Sleep(100);
+                plane.update();
+            }
+            while (true);
         }
     }
 }
