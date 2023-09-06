@@ -11,6 +11,8 @@ namespace Parachute
         static void Main(string[] args)
         {
             Console.SetWindowSize(Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT);
+            Plane plane = new Plane();
+            plane.Draw();
             Console.ReadLine();
         }
     }

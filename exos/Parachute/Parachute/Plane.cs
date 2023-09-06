@@ -8,8 +8,13 @@ namespace Parachute
 {
     internal class Plane
     {
+        private int _x;
+        private int _y;
+        
+
+
         private string[] view =
-    {
+        {
             @" _                         ",
             @"| \                        ",
             @"|  \       ______          ",
@@ -17,5 +22,22 @@ namespace Parachute
             @"  \_______ --------- __>-} ",
             @"        \_____|_____/   |  "
         };
+
+        private const int Width = 29;
+        private const int height = 6;
+
+        public void Draw()
+        {
+            for (int i = 0; i < view.Length; i++)
+            {
+                Console.SetCursorPosition(_x, _y + i);
+                Console.WriteLine(view[i]);
+            }
+        }
+
+        public void MovePlane()
+        {
+
+        }
     }
 }
