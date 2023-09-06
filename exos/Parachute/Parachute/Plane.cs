@@ -24,8 +24,18 @@ namespace Parachute
             @"        \_____|_____/   |  "
         };
 
+
         private const int Width = 29;
         private const int height = 6;
+
+        public List<Para> paraList = new List<Para>();
+
+        Para Bob = new Para();
+
+        public void addPassenger()
+        {
+            paraList.Add(Bob);
+        }
 
         public void Draw()
         {

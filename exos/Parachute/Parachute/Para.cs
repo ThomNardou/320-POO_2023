@@ -8,5 +8,29 @@ namespace Parachute
 {
     internal class Para
     {
+        private int _x;
+        private int _y;
+
+        private string[] withoutParachute =
+        {
+         @"     ",
+         @"     ",
+         @"     ",
+         @"  o  ",
+         @" /░\ ",
+         @" / \ ",
+        };
+
+        private string[] withParachute =
+        {
+         @" ___ ",
+         @"/|||\",
+         @"\   /",
+         @" \o/ ",
+         @"  ░  ",
+         @" / \ ",
+        };
+
+
     }
 }
