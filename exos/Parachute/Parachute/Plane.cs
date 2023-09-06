@@ -9,7 +9,7 @@ namespace Parachute
 {
     internal class Plane
     {
-        private int _x;
+        public int _x;
         private int _y;
         
 

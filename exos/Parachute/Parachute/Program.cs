@@ -32,7 +32,7 @@ namespace Parachute
                 }
 
                 plane.Draw();
-                Thread.Sleep(200);
+                Thread.Sleep(50);
                 plane.update();
                 Console.Clear();
 
@@ -43,6 +43,8 @@ namespace Parachute
                     {
                         case ConsoleKey.Spacebar:
                             paraListJumping.Add(plane.paraList[0]);
+                            Para toto = paraListJumping[0];
+                            toto.jump(plane._x);
                             paraListJumping[0].drawPassenger();
                             isJumping = true;
                             break;
