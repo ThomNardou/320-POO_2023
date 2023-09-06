@@ -12,16 +12,34 @@ namespace Parachute
         static void Main(string[] args)
         {
             Console.SetWindowSize(Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT);
-            Para[] myParas = new Para[3];
-            Plane plane = new Plane(myParas);
-            plane.Draw();
+            ConsoleKeyInfo keyPressed;
+
+            int intTemp = 0;
+
+            Plane plane = new Plane();
+
+
+            plane.addPassenger();
 
             do
             {
 
+                plane.Draw();
                 plane.MovePlaneLeft();
-                Thread.Sleep(100);
+                Thread.Sleep(200);
                 plane.update();
+                Console.Clear();
+
+                if (Console.KeyAvailable)
+                {
+                    keyPressed = Console.ReadKey(true);
+                    switch(keyPressed.Key)
+                    {
+                        case ConsoleKey.Spacebar:
+                            plane.drawPassenger();
+                            break;
+                    }
+                }
             }
             while (true);
         }
