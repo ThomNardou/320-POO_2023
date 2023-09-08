@@ -24,6 +24,16 @@ namespace Parachute
          @" / \ ",
         };
 
+        public string[] withoutParachuteInVoid =
+        {
+         @"     ",
+         @"     ",
+         @"     ",
+         @" \o/ ",
+         @"  ░  ",
+         @" / \ ",
+        };
+
         private string[] withParachute =
         {
          @" ___ ",
@@ -73,7 +83,7 @@ namespace Parachute
             }
             else if (!parachuteIsOpen && _yPos < Config.SCREEN_HEIGHT - 6)
             {
-                _yPos += 2;
+                _yPos += 3;
             }
             else
             {

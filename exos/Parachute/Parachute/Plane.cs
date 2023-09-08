@@ -63,7 +63,7 @@ namespace Parachute
             }
             else
             {
-                _x++;
+                _x += 4;
             }
         }
     }
