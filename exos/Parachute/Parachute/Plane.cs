@@ -11,7 +11,7 @@ namespace Parachute
     {
         public int _x;
         private int _y;
-        
+
 
 
         private string[] view =
@@ -30,20 +30,23 @@ namespace Parachute
 
         public List<Para> paraList = new List<Para>();
 
-        Para Bob = new Para();
 
-        public void addPassenger()
+        public void addPassenger(Para person)
         {
-            paraList.Add(Bob);
+            paraList.Add(person);
         }
-
-        public void removePassenger()
+        public Para DropPara()
         {
-            paraList.Remove(Bob);
+
+            Para paraToJump = paraList.First();
+            paraList.First().XPos = _x;
+            paraList.RemoveAt(0);
+            return paraToJump;
         }
 
         public void Draw()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             for (int i = 0; i < view.Length; i++)
             {
                 Console.SetCursorPosition(_x, _y + i);
@@ -53,7 +56,15 @@ namespace Parachute
 
         public void update()
         {
-            _x++;
+
+            if (this._x > Config.SCREEN_WIDTH - 5)
+            {
+                this._x = 0;
+            }
+            else
+            {
+                _x++;
+            }
         }
     }
 }

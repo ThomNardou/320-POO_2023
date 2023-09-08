@@ -14,41 +14,45 @@ namespace Parachute
             Console.SetWindowSize(Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT);
             ConsoleKeyInfo keyPressed;
 
-            bool isJumping = false;
-
-            List<Para> paraListJumping = new List<Para>();
+            List<Para> parasWhoJumped = new List<Para>();
+            Para Bob = new Para();
+            Para alice = new Para();
+            Para TotoM = new Para();
 
             Plane plane = new Plane();
 
-
-            plane.addPassenger();
+            plane.addPassenger(Bob);
+            plane.addPassenger(TotoM);
+            plane.addPassenger(alice);
 
             do
             {
-                if (isJumping)
-                {
-                    paraListJumping[0].drawPassenger();
-                    paraListJumping[0].updatePassenger();
-                }
-
-                plane.Draw();
-                Thread.Sleep(50);
                 plane.update();
+                plane.Draw();
+                Thread.Sleep(100);
                 Console.Clear();
-
+               
                 if (Console.KeyAvailable)
                 {
                     keyPressed = Console.ReadKey(true);
                     switch(keyPressed.Key)
                     {
                         case ConsoleKey.Spacebar:
-                            paraListJumping.Add(plane.paraList[0]);
-                            Para toto = paraListJumping[0];
-                            toto.jump(plane._x);
-                            paraListJumping[0].drawPassenger();
-                            isJumping = true;
+                            if (plane.paraList.Any())
+                            {
+                                parasWhoJumped.Add(plane.DropPara());
+                            }
                             break;
                     }
+                }
+
+
+
+                foreach (Para para in parasWhoJumped)
+                {
+                    para.drawPassenger();
+                    para.updatePassenger();
+                    para.isJumping = true;
                 }
             }
             while (true);

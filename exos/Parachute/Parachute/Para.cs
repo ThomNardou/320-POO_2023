@@ -8,8 +8,11 @@ namespace Parachute
 {
     internal class Para
     {
-        private int _x;
-        private int _y;
+        public int XPos { get; set; }
+        private int _yPos;
+
+        public bool isJumping = false;
+        private bool parachuteIsOpen = false;
 
         public string[] withoutParachute =
         {
@@ -33,28 +36,49 @@ namespace Parachute
 
         public void drawPassenger()
         {
-            Console.SetCursorPosition(_x, _y + 7);
-            for (int i = 0; i < withoutParachute.Length; i++)
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            if (!parachuteIsOpen)
             {
-                Console.SetCursorPosition(_x, _y + i + 7);
-                Console.WriteLine(withoutParachute[i]);
+                Console.SetCursorPosition(XPos, _yPos);
+                for (int i = 0; i < withoutParachute.Length; i++)
+                {
+                    Console.SetCursorPosition(XPos, _yPos + i);
+                    Console.WriteLine(withoutParachute[i]);
+                }
+            }
+            else
+            {
+                //Console.SetCursorPosition(_x, _y);
+                for (int i = 0; i < withParachute.Length; i++)
+                {
+                    Console.SetCursorPosition(XPos, _yPos + i);
+                    Console.WriteLine(withParachute[i]);
+                }
             }
         }
 
-        public void jump(int x)
-        {
-            this._x = x;
-            Console.SetCursorPosition(x, _y + 7);
-            for (int i = 0; i < withoutParachute.Length; i++)
-            {
-                Console.SetCursorPosition(_x, _y + i + 7);
-                Console.WriteLine(withoutParachute[i]);
-            }
-        } 
-
         public void updatePassenger()
         {
-            _y++;
+            if (_yPos >= Config.SCREEN_HEIGHT / 2 && _yPos < Config.SCREEN_HEIGHT - 6)
+            {
+                parachuteIsOpen = true;
+            }
+            else if (_yPos >= Config.SCREEN_HEIGHT - 6)
+            {
+                parachuteIsOpen= false;
+            }
+            if (parachuteIsOpen)
+            {
+                _yPos += 1;
+            }
+            else if (!parachuteIsOpen && _yPos < Config.SCREEN_HEIGHT - 6)
+            {
+                _yPos += 2;
+            }
+            else
+            {
+                _yPos += 0;
+            }
         }
 
     }
