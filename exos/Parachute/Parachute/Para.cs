@@ -12,7 +12,12 @@ namespace Parachute
         private int _yPos;
 
         public bool isJumping = false;
+        public bool Wind = true;
         private bool parachuteIsOpen = false;
+        private int randomNumber;
+
+        private Random random = new Random();
+
 
         public string[] withoutParachute =
         {
@@ -21,16 +26,6 @@ namespace Parachute
          @"     ",
          @"  o  ",
          @" /░\ ",
-         @" / \ ",
-        };
-
-        public string[] withoutParachuteInVoid =
-        {
-         @"     ",
-         @"     ",
-         @"     ",
-         @" \o/ ",
-         @"  ░  ",
          @" / \ ",
         };
 
@@ -77,6 +72,8 @@ namespace Parachute
             {
                 parachuteIsOpen= false;
             }
+
+
             if (parachuteIsOpen)
             {
                 _yPos += 1;
@@ -88,6 +85,12 @@ namespace Parachute
             else
             {
                 _yPos += 0;
+            }
+
+            if (Wind && parachuteIsOpen)
+            {
+                randomNumber = random.Next(0, 3);
+                XPos-= randomNumber;
             }
         }
 

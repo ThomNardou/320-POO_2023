@@ -33,6 +33,10 @@ namespace ConsoleApp1
             while (i <= Life)
             {
                 Console.MoveBufferArea(i, POSy, 4, 1, i+1, POSy);
+
+                if (i >= Life / 2)
+                    speed = 400;
+
                 Thread.Sleep(speed);
                 i++;
             }
