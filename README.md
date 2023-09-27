@@ -11,41 +11,45 @@ Cours POO
 - Démo simu complète
 - Modification "facile" (couleur fourmi)
   
-### Séquence 2
+### [Séquence 2](sequences/02.md)
 
 - Classe / Objet / Namespace / Terminologie
 - Collections
 - Exercice création de classe / instantiation 
+- Properties : attribut privé sans _ , accesseur / modificateur explicites
 
-### Séquence 3
+### [Séquence 3](sequences/03.md)
+
+- Consolidation
+
+### [Séquence 4](sequences/04.md)
 
 - Héritage / Polymorphisme
 - UML
-- Exercice général + Exo fourmi
+- Lib aléatoire
+- Documentation auto
 
-### Séquence 4
-
-- Test
-- Activité M&M : tests à faire pour publier le produit au public (Zweifel)
-- Démo MSTest
-- Ajouter des tests à un exo précédent
-
-### Séquence 5
+### [Séquence 5](sequences/05.md)
 
 - **Test 1 (théorique)**
-- Encapsulation / Visibilité
-- Properties : attribut privé sans _ , accesseur / modificateur explicites
-- Ajouter des contraintes / conversions à des attributs d'un exercice précédent
+
+- Activité M&M : tests à faire pour publier le produit au public (Zweifel)
+- Démo MSTest + calculatrice
+- Ajouter des tests à la lib aléatoire
 
 ### Séquence 6
 
-- Librairie pour partage de code entre fourmi par composition
-- 
+- Retour du test
+- Récap sur les tests : Comment tester la console
+- Héritage 2 (fourmi)
+
 ### Séquence 7
 
 - **Test 2 (pratique, tests unitaires à corriger)**
 - Lib
 
 ### Séquence 8
-
 - Remediations
+- Build et déploiement NUGET d’une librairie depuis Github
+- Builder pattern
+- Immutabilité
