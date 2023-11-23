@@ -37,19 +37,17 @@ Cours POO
 - Démo MSTest + calculatrice
 - Ajouter des tests à la lib aléatoire
 
-### Séquence 6
+### [Séquence 6](sequences/06.md)
 
 - Retour du test
-- Récap sur les tests : Comment tester la console
-- Héritage 2 (fourmi)
+- Test / Héritage / IOC
 
-### Séquence 7
+### [Séquence 7](sequences/07.md)
 
 - **Test 2 (pratique, tests unitaires à corriger)**
-- Lib
+- Lib / Projet
 
-### Séquence 8
+### [Séquence 8](sequences/08.md)
 - Remediations
-- Build et déploiement NUGET d’une librairie depuis Github
-- Builder pattern
-- Immutabilité
+- Découvertes
+
